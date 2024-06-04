@@ -18,22 +18,21 @@ $nbaPlayers = [
     ]
     ];
 
-function filterByTeam($nbaPlayers){
-    //filters players by team
+function filteredPlayers($nbaPlayers, $team){
+    //filters players by teams
 
-    $fileredPlayers = [];
+    $filteredByTeams = [];
 
-    foreach($nbaPlayers as $nbaPlayer){
-        if ($nbaPlayer['Team'] === 'Bulls'){
-            $fileredPlayers[] = $nbaPlayer;
+    foreach($nbaPlayers as $nbaplayer){
+        if ($nbaplayer['Team'] === $team){
+            $filteredByTeams[] = $nbaplayer;
         }
     }
-    return $fileredPlayers;
+    return $filteredByTeams;
 }
 
-
-foreach (filterByTeam($nbaPlayers) as $nbaPlayer){
-    echo $nbaPlayer['name']."<br>";
+foreach(filteredPlayers($nbaPlayers, 'Bulls') as $nbaplayer){
+    echo $nbaplayer['name']."<br>";
 }
     
 ?>
