@@ -1,14 +1,9 @@
 <?php 
 $name = "Simon";
 $greeting = "Hello";
-$book = "Game of Thrones";
+$books = ["Game of Thrones", "Mad Max", "Avangers"];
 $read = true;
 
-if ($read){
-    echo $greeting . ", " . $name . " has read $book";
-} else {
-    echo $greeting . ", " . $name . " has not read $book"; 
-}
-
-
+foreach ($books as $book){
+    echo $greeting . ", " . $name . " has read $book ";}
 ?>
