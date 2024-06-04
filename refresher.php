@@ -1,7 +1,14 @@
 <?php 
-$name = "simon";
+$name = "Simon";
 $greeting = "Hello";
+$book = "Game of Thrones";
+$read = true;
 
-echo $greeting . " " . "this is " . $name 
+if ($read){
+    echo $greeting . ", " . $name . " has read $book";
+} else {
+    echo $greeting . ", " . $name . " has not read $book"; 
+}
+
 
 ?>
