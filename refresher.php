@@ -4,35 +4,44 @@ $nbaPlayers = [
     [
         'name' => 'Lebron James',
         'Team' => 'Lakers',
+        'conference' => 'West',
         'Age' => '39'
+    ],
+    [
+        'name' => 'Anthony Joshua',
+        'Team' => 'Lakers',
+        'conference' => 'West',
+        'Age' => '28'
     ],
     [
         'name' => 'Michael Jordan',
         'Team' => 'Bulls',
+        'conference' => 'East',
         'Age' => '50'
     ],
     [
         'name' => 'Scot Pippen',
         'Team' => 'Bulls',
+        'conference' => 'East',
         'Age' => '52'
     ]
     ];
 
-$filteredPlayers = function ($nbaPlayers, $team){
+function filter($items, $key, $value){
     //filters players by teams
 
-    $filteredByTeams = [];
+    $filteredItem = [];
 
-    foreach($nbaPlayers as $nbaplayer){
-        if ($nbaplayer['Team'] === $team){
-            $filteredByTeams[] = $nbaplayer;
+    foreach($items as $item){
+        if ($item[$key] === $value){
+            $filteredItem[] = $item;
         }
     }
-    return $filteredByTeams;
+    return $filteredItem;
 };
 
 
-$filtereditems = $filteredPlayers($nbaPlayers, 'Bulls');
+$filtereditems = filter($nbaPlayers, 'conference', 'West');
 
 
 foreach($filtereditems as $nbaplayer){
