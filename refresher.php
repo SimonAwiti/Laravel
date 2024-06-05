@@ -18,7 +18,7 @@ $nbaPlayers = [
     ]
     ];
 
-function filteredPlayers($nbaPlayers, $team){
+$filteredPlayers = function ($nbaPlayers, $team){
     //filters players by teams
 
     $filteredByTeams = [];
@@ -29,9 +29,13 @@ function filteredPlayers($nbaPlayers, $team){
         }
     }
     return $filteredByTeams;
-}
+};
 
-foreach(filteredPlayers($nbaPlayers, 'Bulls') as $nbaplayer){
+
+$filtereditems = $filteredPlayers($nbaPlayers, 'Bulls');
+
+
+foreach($filtereditems as $nbaplayer){
     echo $nbaplayer['name']."<br>";
 }
     
