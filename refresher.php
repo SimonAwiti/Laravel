@@ -27,18 +27,22 @@ $nbaPlayers = [
     ]
     ];
 
-function filter($items, $key, $value){
+function filter($items, $fn){
     //filters items
-    $flitereditems = [];
+    $filtereitems = [];
+
     foreach ($items as $item){
-        if ($item[$key] === $value){
-        $flitereditems[] = $item;
+        if ($fn($item)){
+            $filtereitems[] = $item;
+        }
     }
-    }
-    return $flitereditems;
+    return $filtereitems;
+  
 }
 
-$filtered = filter($nbaPlayers, 'Team', 'Lakers');
+$filtered = filter($nbaPlayers, function ($nbaplayer){
+    return $nbaplayer['Team'] === 'Bulls';
+});
 
 foreach ($filtered as $nbaplayer){
     echo $nbaplayer['name']. ", ". $nbaplayer['conference']."<br>";
