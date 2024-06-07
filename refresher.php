@@ -40,7 +40,7 @@ function filter($items, $fn){
   
 }
 
-$filtered = filter($nbaPlayers, function ($nbaplayer){
+$filtered = array_filter($nbaPlayers, function ($nbaplayer){
     return $nbaplayer['Team'] === 'Bulls';
 });
 
